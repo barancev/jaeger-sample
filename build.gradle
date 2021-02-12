@@ -1,0 +1,24 @@
+plugins {
+  id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testImplementation platform("io.opentelemetry:opentelemetry-bom:0.16.0")
+  testImplementation 'io.opentelemetry:opentelemetry-api'
+  testImplementation 'io.opentelemetry:opentelemetry-exporter-jaeger'
+  testImplementation 'io.grpc:grpc-netty:1.35.0'
+  testImplementation 'io.opentelemetry:opentelemetry-exporter-jaeger-thrift'
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+  useJUnitPlatform()
+}
